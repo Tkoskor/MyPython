@@ -6,15 +6,23 @@ z = 0
 arvudetabel=[]    
 kuupäev = datetime.now().strftime("%Y-%m-%d %H:%M:%S")      
 
+def arvutused(arvud):      # Loob funktsiooni nimega arvutused          
+    """Väljastab sisestatud arvude summa, keskmise ja suurima arvu
 
-def arvutused(arvud):                    
-    summa = 0                       
-    for arv in arvud:               
-        summa += int(arv)                
-    keskmine = summa / len(arvud)   
-    suurim = max(arvud)            
+    arvud: list
+    summa: listi arvude summa
+    keskmine: listi arvude keskmine
+    suurim: listis olev suurim arv
+    return: tagastab teksti ja 
+    """
+    
+    summa = 0                            # Loob muutuja summa
+    for arv in arvud:                    # Loeb arvude listist iga arvu ja liidab selle kokku
+        summa += int(arv)                #
+    keskmine = summa / len(arvud)        # Jagab arvude summa listis olevate arvude kogusega
+    suurim = max(arvud)                  # Valib listist suurima arvu
 
-    return f'Summa: {summa}\nKeskmine: {keskmine}\nSuurim arv: {suurim}' 
+    return f'Summa: {summa}\nKeskmine: {keskmine}\nSuurim arv: {suurim}'    # Tagastab teksti ja liigutab kõik väärtused eraldi reale
 
 
 andmed_info = open(output_file, 'w', encoding='utf-8')
